@@ -106,29 +106,39 @@
 			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
 			// results.className = 'container results';
 			// main.appendChild(results);
-		};
+		}
 
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
-
+		    event.preventDefault();
 	    	// Run the 'makeResults' function seen above
-
+	    	makeResults();
 	    	/*
 			
-				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:*/
 
-				"Once upon a time there was a Developer named NAME."
 
-				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
 
-				""MISSION", NAME shouted."
-	
-				"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
+			/*	"Once upon a time there was a Developer named NAME."*/
+			var name = $('input#name').val();	
+			$('.container.results').append('Once upon a time there was a Developer named ' + name + '. ');
+			/*	"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."*/
+			var verb1 = $('#verb-1').val();
+			$('.container.results').append( name + ' came to General Assembly to ' + verb1 + ' the great mountain of programming knowledge.');
+			/*	""MISSION", NAME shouted."*/
+			var mission = $('#mission').val();
+			$('.container.results').append( '"' + mission + '"' + ', ' + name + ' shouted. ');	
+			/*	"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."*/
+			var sentiment = $('input[name=sentiment]:checked').val();
+			var noun = $('#noun-1').val();
+			$('.container.results').append(' Though ' + sentiment + ', ' + name + ' was able to overcome all obstacles with the power of the ' + noun + '. ');
+			/*	"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."*/
+			var adj2 = $('input[name=adjective-2]:checked').map(function () {return this.value;}).get().join(', ');
+			var noun2 = $('#noun-2').val();
+			$('.container.results').append(' In the end, their success can be contributed entirely to their ' + adj2 + ' ' + noun2 + '.');
 
-				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
-
-	    	*/ 
+	    	
 		});
 	</script>
 
