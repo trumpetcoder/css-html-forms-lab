@@ -77,11 +77,51 @@ h1 {
 
 #mission {
 	border-radius: 10px;
-	display: block;
+	/*display: block;*/
 }
 
+label {
+	margin-left: 4%;
+}
+.radio label {
+	margin-left: -3%;
+}
+
+
 .radioButtons {
-	display: inline;
+	margin-left: 5%;
+}
+
+#radio1 {
+	width: 5%;
+}
+
+#radio2 {
+	width: 5%;
+}
+
+#radio3 {
+	width: 5%;
+}
+
+.check label {
+	margin-left: -3%;
+}
+
+.checkboxes {
+	margin-left: 5%;
+}
+
+#check1 {
+	width: 5%;
+}
+
+#check2 {
+	width: 5%;
+}
+
+#check3 {
+	width: 5%;
 }
 
 #noun-1 {
@@ -114,16 +154,17 @@ h1 {
 	/*.row elements should be spaced out so they're not touching.*/
 
 	/*.formGroup elements should fill the width of their container, and be inline-block.*/
-.formGroup {
+/*.formGroup {
+	display: inline-block;
 
-}
+}*/
 	/*The labels inside of .formGroup should be on their own line above form options, fill the width of their container, and have top/bottom padding.*/
-label {
+/*label {
 	margin: 20px;
 	padding-top: 5px;
-	padding-bottom: 5px;
-	/*float: left;*/
-}
+	padding-bottom: 20px;
+}*/
+
 	
 	/*Radio buttons and checkbox options should each be on their own line, and indented a little. */
 
